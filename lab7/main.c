@@ -1,13 +1,17 @@
 #include <stdio.h>
 
 
-void sortujTabliceFor(int tablica[], int rozmiar) {
+void sortujTabliceFor(int tablica[],int rozmiar) {
+
+
+    printf("Rozmiar tablicy: %d\n", rozmiar);
+    
     for (int i = 0; i < rozmiar - 1; i++) {
-        for (int j = 0; j < rozmiar - i - 1; j++) {
-            if (tablica[j] > tablica[j + 1]) {
-                int temp = tablica[j];
-                tablica[j] = tablica[j + 1];
-                tablica[j + 1] = temp;
+        for (int j = i + 1; j < rozmiar; j++) {
+            if (tablica[i] > tablica[j]) {
+                int temp = tablica[i];
+                tablica[i] = tablica[j];
+                tablica[j] = temp;
             }
         }
     }
